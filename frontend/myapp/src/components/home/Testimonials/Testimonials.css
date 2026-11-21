@@ -1,0 +1,230 @@
+/* =========================================
+   ZIPREE — TESTIMONIALS SLIDER
+========================================= */
+
+.zipree-testimonials {
+  background: var(--color-charcoal-2); /* Slightly lighter than page bg for contrast */
+  padding: 120px 5%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.zipree-testimonials__container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.zipree-testimonials__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.zipree-testimonials__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.zipree-testimonials__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.2;
+}
+
+/* --- Slider Layout --- */
+.zipree-testimonials__slider {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Left: Text --- */
+.zipree-testimonials__content {
+  position: relative;
+  padding: 40px 0;
+}
+
+.zipree-testimonials__quote-mark {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  font-family: var(--font-display);
+  font-size: 180px;
+  color: var(--color-champagne);
+  opacity: 0.1;
+  line-height: 1;
+  z-index: 0;
+}
+
+.zipree-testimonials__text-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 250px; /* Prevents layout jump when text lengths differ */
+}
+
+.zipree-testimonials__review {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  line-height: 1.5;
+  color: var(--color-ivory);
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.zipree-testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zipree-testimonials__name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-champagne);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.zipree-testimonials__vehicle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-silver);
+}
+
+/* --- Controls --- */
+.zipree-testimonials__controls {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zipree-testimonials__arrows {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.zipree-testimonials__btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--color-ivory);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.zipree-testimonials__btn:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+  background: rgba(198, 164, 106, 0.05);
+}
+
+.zipree-testimonials__count {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-silver);
+  letter-spacing: 0.1em;
+}
+
+.zipree-testimonials__progress-track {
+  width: 100%;
+  max-width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.zipree-testimonials__progress-fill {
+  height: 100%;
+  background: var(--color-champagne);
+}
+
+/* --- Right: Image --- */
+.zipree-testimonials__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.zipree-testimonials__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.zipree-testimonials__image-border {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-testimonials__slider {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .zipree-testimonials__image-wrapper {
+    height: 400px;
+    order: -1; /* Image goes on top on mobile/tablet */
+  }
+
+  .zipree-testimonials__content {
+    padding: 0;
+  }
+  
+  .zipree-testimonials__text-wrapper {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .zipree-testimonials {
+    padding: 80px 5%;
+  }
+
+  .zipree-testimonials__quote-mark {
+    font-size: 120px;
+    left: -10px;
+  }
+
+  .zipree-testimonials__image-wrapper {
+    height: 280px;
+  }
+
+  .zipree-testimonials__review {
+    font-size: 1.15rem;
+  }
+
+  .zipree-testimonials__controls {
+    align-items: flex-start;
+  }
+}

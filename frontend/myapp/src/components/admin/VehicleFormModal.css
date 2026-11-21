@@ -1,0 +1,348 @@
+.zipree-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.zipree-modal {
+  position: relative;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  max-height: min(90vh, 850px);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  font-family: var(--font-poppins);
+}
+
+.zipree-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.zipree-modal__header h2 {
+  font-size: 18px;
+  color: var(--color-ivory);
+  margin: 0;
+  font-weight: 600;
+}
+
+.zipree-modal__header button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-silver);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+  outline: none; /* ← Remove button focus outline */
+}
+
+.zipree-modal__header button:focus,
+.zipree-modal__header button:focus-visible {
+  outline: none;
+}
+
+.zipree-modal__header button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-champagne);
+}
+
+.zipree-modal__body {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.zipree-modal__error {
+  padding: 12px;
+  background: rgba(200, 104, 96, 0.1);
+  border-left: 2px solid var(--color-danger);
+  color: var(--color-danger);
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+.zipree-modal__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.zipree-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  position: relative;
+}
+
+.zipree-modal__field label {
+  font-size: 11px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.zipree-modal__field input,
+.zipree-modal__field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  background: var(--color-charcoal-2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-ivory);
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  outline: none; /* ← Remove input focus outline */
+  transition: border-color 200ms ease;
+}
+
+.zipree-modal__field input:focus,
+.zipree-modal__field input:focus-visible,
+.zipree-modal__field textarea:focus,
+.zipree-modal__field textarea:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--color-champagne);
+}
+
+.zipree-modal__field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.zipree-modal__array-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-width: 0;
+}
+
+.zipree-modal__array-row input {
+  flex: 1;
+}
+
+.zipree-modal__array-row button {
+  width: 42px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none; /* ← Remove button focus outline */
+}
+
+.zipree-modal__array-row button:focus,
+.zipree-modal__array-row button:focus-visible {
+  outline: none;
+}
+
+.zipree-modal__add-btn {
+  padding: 9px 14px;
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: var(--color-silver);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 200ms ease;
+  outline: none; /* ← Remove button focus outline */
+}
+
+.zipree-modal__add-btn:focus,
+.zipree-modal__add-btn:focus-visible {
+  outline: none;
+}
+
+.zipree-modal__add-btn:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+.zipree-modal__flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding-top: 8px;
+}
+
+.zipree-modal__flags label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-silver);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.zipree-modal__flags input {
+  accent-color: var(--color-champagne);
+  outline: none; /* ← Remove checkbox focus outline */
+}
+
+.zipree-modal__flags input:focus,
+.zipree-modal__flags input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.zipree-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 8px;
+}
+
+.zipree-btn-primary,
+.zipree-btn-secondary {
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease, opacity 200ms ease;
+  outline: none; /* ← Remove button focus outline */
+}
+
+.zipree-btn-primary:focus,
+.zipree-btn-primary:focus-visible,
+.zipree-btn-secondary:focus,
+.zipree-btn-secondary:focus-visible {
+  outline: none;
+}
+
+.zipree-btn-primary {
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  border: none;
+}
+
+.zipree-btn-primary:hover {
+  background: var(--color-ivory);
+}
+
+.zipree-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zipree-btn-secondary {
+  background: transparent;
+  color: var(--color-ivory);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.zipree-btn-secondary:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .zipree-modal-overlay {
+    padding: 16px;
+    align-items: center;
+  }
+
+  .zipree-modal {
+    max-height: 92vh;
+  }
+
+  .zipree-modal__header {
+    padding: 18px 20px;
+  }
+
+  .zipree-modal__body {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .zipree-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .zipree-modal {
+    max-height: calc(100dvh - 20px);
+    margin: auto 0;
+  }
+
+  .zipree-modal__header {
+    padding: 16px;
+  }
+
+  .zipree-modal__header h2 {
+    font-size: 16px;
+  }
+
+  .zipree-modal__body {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .zipree-modal__row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .zipree-modal__field input,
+  .zipree-modal__field textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .zipree-modal__flags {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .zipree-modal__actions {
+    flex-direction: column-reverse;
+  }
+
+  .zipree-btn-primary,
+  .zipree-btn-secondary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,380 @@
+.zipree-fleet-page {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  background: transparent;
+}
+
+.zipree-fleet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.zipree-fleet-header h1 {
+  font-family: var(--font-poppins);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-ivory);
+  margin: 0 0 4px;
+}
+
+.zipree-fleet-header p {
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  color: var(--color-silver);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.zipree-fleet-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms ease;
+  outline: none; /* ← Remove focus outline */
+}
+
+.zipree-fleet-add-btn:focus,
+.zipree-fleet-add-btn:focus-visible {
+  outline: none;
+}
+
+.zipree-fleet-add-btn:hover {
+  background: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+/* KPI Cards */
+
+.zipree-fleet-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.zipree-fleet-kpi {
+  min-width: 0;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.zipree-fleet-kpi__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.zipree-fleet-kpi__label {
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px;
+}
+
+.zipree-fleet-kpi__value {
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ivory);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Toolbar */
+
+.zipree-fleet-toolbar {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+.zipree-fleet-search {
+  flex: 1;
+  min-width: 220px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-silver);
+  transition: border-color 200ms ease;
+}
+
+.zipree-fleet-search:focus-within {
+  border-color: var(--color-champagne);
+  outline: none; /* ← Remove focus outline */
+}
+
+.zipree-fleet-search input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none; /* ← Remove input focus outline */
+  color: var(--color-ivory);
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.zipree-fleet-search input:focus,
+.zipree-fleet-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.zipree-fleet-search input::placeholder {
+  color: rgba(167, 173, 178, 0.5);
+}
+
+/* Table */
+
+.zipree-fleet-table-card {
+  position: relative;
+  z-index: 1;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.zipree-fleet-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.zipree-fleet-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+.zipree-fleet-table th {
+  text-align: left;
+  padding: 16px;
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-silver);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.zipree-fleet-table td {
+  padding: 16px;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  color: var(--color-ivory);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+}
+
+.zipree-fleet-table tbody tr {
+  transition: background 180ms ease;
+}
+
+.zipree-fleet-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.zipree-fleet-vehicle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+}
+
+.zipree-fleet-vehicle img {
+  width: 60px;
+  height: 42px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--color-charcoal-2);
+}
+
+.zipree-fleet-vehicle__name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-ivory);
+}
+
+.zipree-fleet-vehicle__year {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: var(--color-silver);
+}
+
+.zipree-fleet-category {
+  text-transform: capitalize;
+}
+
+.zipree-fleet-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.zipree-table-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-silver);
+  cursor: pointer;
+  transition: all 200ms ease;
+  outline: none; /* ← Remove button focus outline */
+}
+
+.zipree-table-btn:focus,
+.zipree-table-btn:focus-visible {
+  outline: none;
+}
+
+.zipree-table-btn:hover {
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+}
+
+.zipree-table-btn--danger:hover {
+  background: var(--color-danger);
+  color: white;
+}
+
+.zipree-fleet-no-results {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--color-silver);
+  font-family: var(--font-poppins);
+  font-size: 14px;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .zipree-fleet-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .zipree-fleet-header h1 {
+    font-size: 24px;
+  }
+
+  .zipree-fleet-kpi {
+    padding: 18px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .zipree-fleet-header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  .zipree-fleet-header h1 {
+    font-size: 22px;
+  }
+
+  .zipree-fleet-header p {
+    font-size: 13px;
+  }
+
+  .zipree-fleet-add-btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .zipree-fleet-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .zipree-fleet-kpi {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .zipree-fleet-kpi__icon {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .zipree-fleet-kpi__label {
+    font-size: 9px;
+  }
+
+  .zipree-fleet-kpi__value {
+    font-size: 18px;
+  }
+
+  .zipree-fleet-toolbar {
+    flex-direction: column;
+  }
+
+  .zipree-fleet-search {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+  }
+
+  .zipree-fleet-table {
+    min-width: 580px;
+  }
+
+  .zipree-fleet-table th,
+  .zipree-fleet-table td {
+    padding: 13px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .zipree-fleet-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

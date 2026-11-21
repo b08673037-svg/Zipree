@@ -1,0 +1,32 @@
+/* ZIPREE — Design tokens
+   Colors and font families ONLY. No spacing, radius, shadow, or button tokens. */
+
+:root {
+  /* Palette — from brand brief */
+  --color-charcoal: #111315;
+  --color-charcoal-2: #25282A;
+  --color-ivory: #F5F3EF;
+  --color-champagne: #C6A46A;
+  --color-silver: #A7ADB2;
+
+  /* Semantic color aliases */
+  --color-bg: var(--color-charcoal);
+  --color-bg-elevated: var(--color-charcoal-2);
+  --color-surface: #1A1C1E;
+  --color-border: rgba(167, 173, 178, 0.15);
+  --color-text: var(--color-ivory);
+  --color-text-muted: var(--color-silver);
+  --color-text-on-ivory: var(--color-charcoal);
+  --color-accent: var(--color-champagne);
+  --color-accent-soft: rgba(198, 164, 106, 0.12);
+  --color-success: #6BA884;
+  --color-danger: #C86860;
+  --color-studio-bg: #09090B;
+  --color-studio-floor: #121215;
+
+  /* Fonts */
+  --font-display: "Sora", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-poppins: "Poppins", system-ui, sans-serif;
+}

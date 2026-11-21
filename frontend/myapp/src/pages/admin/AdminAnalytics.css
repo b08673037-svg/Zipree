@@ -1,0 +1,587 @@
+
+/* =========================================
+   ZIPREE — ADMIN ANALYTICS
+========================================= */
+
+.zipree-analytics-page {
+  width: 100%;
+  min-width: 0;
+}
+
+/* --- Header --- */
+
+.zipree-analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.zipree-analytics-header h1 {
+  font-family: var(--font-poppins);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-ivory);
+  margin: 0 0 4px;
+}
+
+.zipree-analytics-header p {
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  color: var(--color-silver);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.zipree-analytics-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   CUSTOM DATE RANGE DROPDOWN
+========================================= */
+
+.zipree-analytics-dropdown {
+  position: relative;
+  width: 170px;
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.zipree-analytics-dropdown__trigger {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  color: var(--color-ivory);
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.zipree-analytics-dropdown__trigger:hover,
+.zipree-analytics-dropdown__trigger.is-open {
+  border-color: rgba(198, 164, 106, 0.65);
+  background: var(--color-charcoal-2);
+}
+
+.zipree-analytics-dropdown__trigger:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 3px;
+}
+
+.zipree-analytics-dropdown__arrow {
+  flex-shrink: 0;
+  font-size: 15px;
+  color: var(--color-champagne);
+  transition: transform 200ms ease;
+}
+
+.zipree-analytics-dropdown__arrow.is-rotated {
+  transform: rotate(180deg);
+}
+
+.zipree-analytics-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 100%;
+  min-width: 180px;
+  padding: 6px;
+  background: #202324;
+  border: 1px solid rgba(198, 164, 106, 0.25);
+  border-radius: 7px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  z-index: 100;
+}
+
+.zipree-analytics-dropdown__option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-silver);
+  font-family: var(--font-poppins);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.zipree-analytics-dropdown__option:hover,
+.zipree-analytics-dropdown__option.is-active {
+  background: rgba(198, 164, 106, 0.1);
+  color: var(--color-ivory);
+}
+
+.zipree-analytics-dropdown__option.is-selected {
+  color: var(--color-champagne);
+  font-weight: 600;
+}
+
+.zipree-analytics-dropdown__option svg {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--color-champagne);
+}
+
+/* --- Export Button --- */
+
+.zipree-analytics-export {
+  min-height: 42px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-champagne);
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.zipree-analytics-export:hover:not(:disabled) {
+  background: var(--color-ivory);
+  border-color: var(--color-ivory);
+}
+
+.zipree-analytics-export:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   KPI CARDS
+========================================= */
+
+.zipree-analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.zipree-analytics-kpi {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.zipree-analytics-kpi:hover {
+  border-color: rgba(198, 164, 106, 0.25);
+  transform: translateY(-2px);
+}
+
+.zipree-analytics-kpi__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.zipree-analytics-kpi__content {
+  min-width: 0;
+}
+
+.zipree-analytics-kpi__label {
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+
+.zipree-analytics-kpi__value {
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ivory);
+  line-height: 1.3;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.zipree-analytics-kpi__change {
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+/* =========================================
+   CHART ROWS
+========================================= */
+
+.zipree-analytics-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.zipree-analytics-card {
+  min-width: 0;
+  padding: 24px;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.zipree-analytics-card__title {
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ivory);
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.zipree-analytics-chart {
+  width: 100%;
+  height: 300px;
+  min-width: 0;
+}
+
+.zipree-analytics-empty {
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-silver);
+  text-align: center;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+/* =========================================
+   TOP VEHICLES TABLE
+========================================= */
+
+.zipree-analytics-top-cars {
+  margin-bottom: 24px;
+}
+
+.zipree-analytics-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.zipree-analytics-table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+}
+
+.zipree-analytics-table th {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-silver);
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.zipree-analytics-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--color-ivory);
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.zipree-analytics-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.zipree-analytics-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.zipree-analytics-rank {
+  color: var(--color-champagne) !important;
+  font-weight: 600;
+}
+
+.zipree-analytics-no-data {
+  padding: 32px !important;
+  color: var(--color-silver) !important;
+  text-align: center;
+}
+
+/* =========================================
+   LARGE LAPTOPS
+========================================= */
+
+@media (max-width: 1400px) {
+  .zipree-analytics-kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-analytics-header {
+    align-items: flex-start;
+  }
+
+  .zipree-analytics-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .zipree-analytics-row {
+    gap: 16px;
+  }
+
+  .zipree-analytics-card {
+    padding: 20px;
+  }
+
+  .zipree-analytics-chart {
+    height: 280px;
+  }
+}
+
+/* =========================================
+   SMALL TABLETS
+========================================= */
+
+@media (max-width: 768px) {
+  .zipree-analytics-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .zipree-analytics-header__actions {
+    width: 100%;
+  }
+
+  .zipree-analytics-dropdown {
+    flex: 1;
+    width: auto;
+  }
+
+  .zipree-analytics-export {
+    flex: 0 0 auto;
+  }
+
+  .zipree-analytics-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .zipree-analytics-kpi-grid {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .zipree-analytics-card {
+    padding: 20px;
+  }
+
+  .zipree-analytics-chart {
+    height: 290px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .zipree-analytics-header h1 {
+    font-size: 23px;
+  }
+
+  .zipree-analytics-header p {
+    font-size: 12px;
+  }
+
+  .zipree-analytics-header__actions {
+    gap: 8px;
+  }
+
+  .zipree-analytics-dropdown__trigger {
+    min-height: 40px;
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .zipree-analytics-export {
+    min-height: 40px;
+    padding: 9px 11px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .zipree-analytics-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .zipree-analytics-kpi {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .zipree-analytics-kpi__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .zipree-analytics-kpi__label {
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  .zipree-analytics-kpi__value {
+    font-size: 17px;
+  }
+
+  .zipree-analytics-kpi__change {
+    font-size: 9px;
+  }
+
+  .zipree-analytics-card {
+    padding: 16px;
+    border-radius: 7px;
+  }
+
+  .zipree-analytics-card__title {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .zipree-analytics-chart {
+    height: 260px;
+  }
+
+  .zipree-analytics-empty {
+    min-height: 220px;
+    font-size: 12px;
+  }
+
+  .zipree-analytics-table th {
+    font-size: 10px;
+    padding: 11px 10px;
+  }
+
+  .zipree-analytics-table td {
+    font-size: 12px;
+    padding: 13px 10px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .zipree-analytics-header__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .zipree-analytics-dropdown {
+    width: 100%;
+  }
+
+  .zipree-analytics-export {
+    width: 100%;
+  }
+
+  .zipree-analytics-kpi-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .zipree-analytics-kpi {
+    align-items: center;
+    padding: 15px;
+  }
+
+  .zipree-analytics-kpi__value {
+    font-size: 19px;
+  }
+
+  .zipree-analytics-chart {
+    height: 235px;
+  }
+
+  .zipree-analytics-card {
+    padding: 14px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .zipree-analytics-kpi,
+  .zipree-analytics-dropdown__trigger,
+  .zipree-analytics-dropdown__arrow,
+  .zipree-analytics-dropdown__option,
+  .zipree-analytics-export {
+    transition: none;
+  }
+
+  .zipree-analytics-kpi:hover {
+    transform: none;
+  }
+}

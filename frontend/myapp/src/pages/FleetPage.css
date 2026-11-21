@@ -1,0 +1,1237 @@
+
+/* =========================================
+   ZIPREE — FLEET LISTING PAGE
+   Premium Responsive Styles
+========================================= */
+
+.zipree-fleet-page {
+  --fleet-border: rgba(255, 255, 255, 0.09);
+  --fleet-border-hover: rgba(198, 164, 106, 0.55);
+  --fleet-muted-bg: rgba(255, 255, 255, 0.035);
+  --fleet-transition: 220ms ease;
+
+  min-height: 100vh;
+  width: 100%;
+  overflow: clip;
+  padding-top: 80px;
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+}
+
+.zipree-fleet-page *,
+.zipree-fleet-page *::before,
+.zipree-fleet-page *::after {
+  box-sizing: border-box;
+}
+
+.zipree-fleet-page button,
+.zipree-fleet-page input,
+.zipree-fleet-page select {
+  font: inherit;
+}
+
+.zipree-fleet-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zipree-fleet-page button:focus-visible,
+.zipree-fleet-page input:focus-visible,
+.zipree-fleet-page select:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   01. FLEET HERO
+========================================= */
+
+.zipree-fleet-hero {
+  padding: clamp(58px, 7vw, 88px) 5% clamp(45px, 5vw, 65px);
+  text-align: center;
+  border-bottom: 1px solid var(--fleet-border);
+}
+
+.zipree-fleet-hero__inner {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.zipree-fleet-hero__eyebrow {
+  margin: 0 0 18px;
+  color: var(--color-champagne);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.zipree-fleet-hero__title {
+  margin: 0 0 18px;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.zipree-fleet-hero__desc {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--color-silver);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   02. CATEGORY NAVIGATION
+========================================= */
+
+.zipree-fleet-categories-wrapper {
+  position: sticky;
+  top: 72px;
+  z-index: 40;
+  width: 100%;
+  border-bottom: 1px solid var(--fleet-border);
+  background: rgba(17, 19, 21, 0.96);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.zipree-fleet-categories {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 36px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.zipree-fleet-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.zipree-fleet-cat-btn {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 22px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-silver);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--fleet-transition);
+}
+
+.zipree-fleet-cat-btn::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-champagne);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--fleet-transition);
+}
+
+.zipree-fleet-cat-btn:hover,
+.zipree-fleet-cat-btn.is-active {
+  color: var(--color-ivory);
+}
+
+.zipree-fleet-cat-btn.is-active::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   03. MAIN CONTENT LAYOUT
+========================================= */
+
+.zipree-fleet-container {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(28px, 3vw, 42px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 42px 5% 80px;
+}
+
+/* =========================================
+   04. DESKTOP FILTER SIDEBAR
+========================================= */
+
+.zipree-fleet-sidebar {
+  position: sticky;
+  top: 155px;
+  flex: 0 0 250px;
+  width: 250px;
+  height: fit-content;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(198, 164, 106, 0.35) transparent;
+}
+
+.zipree-fleet-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--fleet-border);
+}
+
+.zipree-fleet-sidebar__header h3 {
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.zipree-fleet-sidebar__clear {
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-champagne);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--fleet-transition);
+}
+
+.zipree-fleet-sidebar__clear:hover {
+  opacity: 0.7;
+}
+
+.zipree-filter-group {
+  margin-bottom: 25px;
+}
+
+.zipree-filter-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-silver);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.zipree-filter-input,
+.zipree-filter-select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid var(--fleet-border);
+  border-radius: 3px;
+  outline: none;
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+  font-size: 13px;
+  transition:
+    border-color var(--fleet-transition),
+    background var(--fleet-transition);
+}
+
+.zipree-filter-input::placeholder {
+  color: rgba(167, 173, 178, 0.55);
+}
+
+.zipree-filter-input:hover,
+.zipree-filter-select:hover {
+  border-color: rgba(198, 164, 106, 0.4);
+}
+
+.zipree-filter-input:focus,
+.zipree-filter-select:focus {
+  border-color: var(--color-champagne);
+  background: #202325;
+}
+
+/* Native select fallback.
+   Use a custom React dropdown for a fully branded popup. */
+
+.zipree-filter-select {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.zipree-filter-select option {
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+}
+
+.zipree-filter-price-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+}
+
+.zipree-filter-price-inputs span {
+  color: var(--color-silver);
+  font-size: 12px;
+}
+
+/* =========================================
+   05. FLEET CONTENT
+========================================= */
+
+.zipree-fleet-content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* =========================================
+   06. TOOLBAR
+========================================= */
+
+.zipree-fleet-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.zipree-fleet-toolbar__count {
+  color: var(--color-silver);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.zipree-fleet-toolbar__count strong {
+  color: var(--color-ivory);
+  font-weight: 600;
+}
+
+.zipree-fleet-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zipree-fleet-sort {
+  min-width: 175px;
+  min-height: 42px;
+  padding: 10px 34px 10px 13px;
+  border: 1px solid var(--fleet-border);
+  border-radius: 3px;
+  outline: none;
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+  font-size: 12px;
+  cursor: pointer;
+  color-scheme: dark;
+  transition: border-color var(--fleet-transition);
+}
+
+.zipree-fleet-sort:hover,
+.zipree-fleet-sort:focus {
+  border-color: var(--color-champagne);
+}
+
+.zipree-fleet-sort option {
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+}
+
+.zipree-fleet-filter-trigger {
+  display: none;
+  min-height: 42px;
+  padding: 10px 17px;
+  border: 1px solid var(--fleet-border);
+  border-radius: 3px;
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    border-color var(--fleet-transition),
+    color var(--fleet-transition);
+}
+
+.zipree-fleet-filter-trigger:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+/* =========================================
+   07. VEHICLE GRID
+========================================= */
+
+.zipree-fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* =========================================
+   08. SKELETON LOADING
+========================================= */
+
+.zipree-fleet-skeleton {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 400px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 4px;
+  background: var(--color-charcoal-2);
+}
+
+.zipree-fleet-skeleton__img {
+  width: 100%;
+  aspect-ratio: 1.45 / 1;
+  background: rgba(255, 255, 255, 0.045);
+  animation: zipreeFleetPulse 1.5s ease-in-out infinite;
+}
+
+.zipree-fleet-skeleton__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+}
+
+.zipree-fleet-skeleton__title,
+.zipree-fleet-skeleton__specs,
+.zipree-fleet-skeleton__price {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.055);
+  animation: zipreeFleetPulse 1.5s ease-in-out infinite;
+}
+
+.zipree-fleet-skeleton__title {
+  width: 65%;
+  height: 22px;
+}
+
+.zipree-fleet-skeleton__specs {
+  width: 85%;
+  height: 15px;
+}
+
+.zipree-fleet-skeleton__price {
+  width: 42%;
+  height: 23px;
+  margin-top: auto;
+}
+
+@keyframes zipreeFleetPulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   09. PAGINATION
+========================================= */
+
+.zipree-fleet-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 55px;
+}
+
+.zipree-fleet-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--fleet-border);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--color-silver);
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    border-color var(--fleet-transition),
+    color var(--fleet-transition),
+    background var(--fleet-transition);
+}
+
+.zipree-fleet-pagination button:hover:not(:disabled) {
+  border-color: var(--color-champagne);
+  color: var(--color-ivory);
+}
+
+.zipree-fleet-pagination button.is-active {
+  border-color: var(--color-champagne);
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+}
+
+.zipree-fleet-pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   10. MOBILE FILTER DRAWER
+========================================= */
+
+.zipree-fleet-mobile-filter {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--color-charcoal);
+  animation: zipreeFleetDrawerIn 250ms ease both;
+}
+
+.zipree-fleet-mobile-filter::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.7);
+  content: "";
+}
+
+.zipree-fleet-mobile-filter__header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  border-bottom: 1px solid var(--fleet-border);
+}
+
+.zipree-fleet-mobile-filter__header h3 {
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.zipree-fleet-mobile-filter__header button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--fleet-border);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--color-ivory);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.zipree-fleet-mobile-filter__body {
+  flex: 1;
+  padding: 24px 5%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@keyframes zipreeFleetDrawerIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   11. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1200px) {
+  .zipree-fleet-container {
+    gap: 28px;
+  }
+
+  .zipree-fleet-sidebar {
+    flex-basis: 225px;
+    width: 225px;
+  }
+
+  .zipree-fleet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .zipree-fleet-sidebar {
+    display: none;
+  }
+
+  .zipree-fleet-filter-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .zipree-fleet-container {
+    padding: 32px 5% 65px;
+  }
+}
+
+/* =========================================
+   12. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+  .zipree-fleet-page {
+    padding-top: 60px;
+  }
+
+  .zipree-fleet-hero {
+    padding: 58px 6% 45px;
+  }
+
+  .zipree-fleet-hero__eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+
+  .zipree-fleet-hero__title {
+    font-size: clamp(2.1rem, 8vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .zipree-fleet-hero__desc {
+    max-width: 470px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .zipree-fleet-categories-wrapper {
+    top: 60px;
+  }
+
+  .zipree-fleet-categories {
+    gap: 25px;
+    padding-inline: 6%;
+  }
+
+  .zipree-fleet-cat-btn {
+    padding: 18px 0;
+    font-size: 12px;
+  }
+
+  .zipree-fleet-container {
+    padding: 26px 6% 55px;
+  }
+
+  .zipree-fleet-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .zipree-fleet-toolbar__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 10px;
+    width: 100%;
+  }
+
+  .zipree-fleet-filter-trigger,
+  .zipree-fleet-sort {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+  }
+
+  .zipree-fleet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .zipree-fleet-skeleton {
+    min-height: 320px;
+  }
+
+  .zipree-fleet-skeleton__img {
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .zipree-fleet-skeleton__content {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .zipree-fleet-pagination {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zipree-fleet-hero {
+    padding-top: 48px;
+    padding-bottom: 38px;
+  }
+
+  .zipree-fleet-hero__title {
+    font-size: 2.15rem;
+  }
+
+  .zipree-fleet-container {
+    padding-inline: 5%;
+  }
+
+  .zipree-fleet-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .zipree-fleet-skeleton {
+    min-height: 360px;
+  }
+
+  .zipree-fleet-skeleton__img {
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .zipree-fleet-skeleton__content {
+    padding: 20px;
+  }
+
+  .zipree-fleet-pagination button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================
+   13. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .zipree-fleet-page *,
+  .zipree-fleet-page *::before,
+  .zipree-fleet-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+
+
+
+/* =========================================
+   ZIPREE — CUSTOM FLEET DROPDOWNS
+========================================= */
+
+.zipree-dropdown {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--font-body);
+  z-index: 10;
+}
+
+.zipree-dropdown:has(.zipree-dropdown__menu) {
+  z-index: 100;
+}
+
+/* Trigger */
+
+.zipree-dropdown__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 3px;
+  background: var(--color-charcoal-2);
+  color: var(--color-ivory);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.zipree-dropdown__trigger:hover,
+.zipree-dropdown__trigger.is-open {
+  border-color: rgba(198, 164, 106, 0.65);
+  background: #202325;
+}
+
+.zipree-dropdown__trigger:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 3px;
+}
+
+.zipree-dropdown__value {
+  overflow: hidden;
+  color: var(--color-ivory);
+  font-size: 13px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zipree-dropdown__arrow {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--color-champagne);
+}
+
+.zipree-dropdown__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dropdown panel */
+
+.zipree-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 0;
+  left: 0;
+  z-index: 300;
+  min-width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(198, 164, 106, 0.32);
+  border-radius: 4px;
+  background: #1c1f21;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.38),
+    0 3px 10px rgba(0, 0, 0, 0.18);
+  transform-origin: top center;
+}
+
+.zipree-dropdown__options {
+  max-height: 260px;
+  padding: 6px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(198, 164, 106, 0.4) transparent;
+}
+
+.zipree-dropdown__options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.zipree-dropdown__options::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.zipree-dropdown__options::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(198, 164, 106, 0.4);
+}
+
+/* Individual options */
+
+.zipree-dropdown__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--color-silver);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.zipree-dropdown__option:hover,
+.zipree-dropdown__option.is-active {
+  background: rgba(198, 164, 106, 0.09);
+  color: var(--color-ivory);
+}
+
+.zipree-dropdown__option.is-selected {
+  color: var(--color-champagne);
+}
+
+.zipree-dropdown__option.is-selected:hover,
+.zipree-dropdown__option.is-selected.is-active {
+  background: rgba(198, 164, 106, 0.13);
+}
+
+.zipree-dropdown__check {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  color: var(--color-champagne);
+}
+
+/* Filter dropdown sizing */
+
+.zipree-dropdown--filter {
+  width: 100%;
+}
+
+/* Sort dropdown sizing */
+
+.zipree-dropdown--sort {
+  width: 205px;
+  flex: 0 0 205px;
+}
+
+.zipree-dropdown--sort .zipree-dropdown__trigger {
+  min-height: 42px;
+}
+
+.zipree-dropdown--sort .zipree-dropdown__value {
+  font-size: 12px;
+}
+
+/* =========================================
+   MOBILE FILTER DRAWER OVERRIDES
+========================================= */
+
+.zipree-fleet-mobile-filter {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.zipree-fleet-mobile-filter__panel {
+  display: flex;
+  flex-direction: column;
+  width: min(420px, 90%);
+  height: 100%;
+  overflow: visible;
+  background: var(--color-charcoal);
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.zipree-fleet-mobile-filter__header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.zipree-fleet-mobile-filter__header h3 {
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.zipree-fleet-mobile-filter__header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--color-ivory);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.zipree-fleet-mobile-filter__body {
+  flex: 1;
+  padding: 25px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.zipree-fleet-mobile-filter__body .zipree-filter-group {
+  margin-bottom: 25px;
+}
+
+/* Keep dropdowns above the drawer content */
+
+.zipree-fleet-mobile-filter__body .zipree-dropdown {
+  z-index: 20;
+}
+
+/* =========================================
+   RESPONSIVE DROPDOWN ADJUSTMENTS
+========================================= */
+
+@media (max-width: 768px) {
+  .zipree-dropdown--sort {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .zipree-dropdown--sort .zipree-dropdown__trigger {
+    min-height: 44px;
+  }
+
+  .zipree-dropdown__menu {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zipree-dropdown__trigger {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
+  .zipree-dropdown__option {
+    min-height: 44px;
+    padding-inline: 11px;
+    font-size: 12px;
+  }
+
+  .zipree-fleet-mobile-filter__panel {
+    width: 92%;
+  }
+
+  .zipree-fleet-mobile-filter__header,
+  .zipree-fleet-mobile-filter__body {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+
+
+
+
+
+/* =========================================
+   FIX — SINGLE PREMIUM INPUT FOCUS BORDER
+========================================= */
+
+.zipree-fleet-page .zipree-filter-input:focus,
+.zipree-fleet-page .zipree-filter-input:focus-visible,
+.zipree-fleet-page .zipree-filter-select:focus,
+.zipree-fleet-page .zipree-filter-select:focus-visible {
+  outline: none;
+  border: 1px solid var(--color-champagne);
+  background: var(--color-charcoal-2);
+  box-shadow: none;
+}
+
+/* Smooth focus transition */
+.zipree-fleet-page .zipree-filter-input,
+.zipree-fleet-page .zipree-filter-select {
+  transition: border-color 220ms ease, background 220ms ease;
+}
+
+/* Keep a subtle focus indicator for keyboard users */
+.zipree-fleet-page .zipree-filter-input:focus-visible,
+.zipree-fleet-page .zipree-filter-select:focus-visible {
+  border-color: var(--color-champagne);
+}
+
+
+
+
+/* =========================================
+   FLEET SIDEBAR — SCROLLBAR SPACING FIX
+========================================= */
+
+.zipree-fleet-sidebar {
+  padding-right: 12px;
+  scrollbar-gutter: stable;
+}
+
+/* Keep the scrollbar slim and visually separated */
+.zipree-fleet-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.zipree-fleet-sidebar::-webkit-scrollbar-track {
+  margin-block: 8px;
+  background: transparent;
+}
+
+.zipree-fleet-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(198, 164, 106, 0.35);
+}
+
+.zipree-fleet-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 164, 106, 0.7);
+}
+
+/* Prevent filter controls from touching the scrollbar */
+.zipree-fleet-sidebar > * {
+  min-width: 0;
+}
+
+
+
+
+
+
+/* =========================================
+   FIX 1 — DROPDOWN STACKING ORDER
+========================================= */
+
+/* Each filter group gets its own stacking position */
+.zipree-filter-group {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bring the entire active filter group above its siblings */
+.zipree-filter-group:has(.zipree-dropdown.is-open) {
+  z-index: 100;
+}
+
+/* Keep the open dropdown above nearby controls */
+.zipree-dropdown {
+  position: relative;
+  z-index: 1;
+}
+
+.zipree-dropdown.is-open {
+  z-index: 200;
+}
+
+.zipree-dropdown__menu {
+  z-index: 999;
+}
+
+/* Mobile drawer dropdown stacking */
+.zipree-fleet-mobile-filter__body .zipree-filter-group:has(
+  .zipree-dropdown.is-open
+) {
+  z-index: 300;
+}
+
+.zipree-fleet-mobile-filter__body .zipree-dropdown.is-open {
+  z-index: 400;
+}
+
+/* =========================================
+   FIX 2 — MOBILE FILTER SPACING
+========================================= */
+
+.zipree-fleet-mobile-filter__body {
+  position: relative;
+  padding-bottom: 35px;
+}
+
+.zipree-fleet-mobile-filter__body .zipree-filter-group {
+  margin-bottom: 26px;
+}
+
+
+/* =========================================
+   MOBILE FILTER DRAWER — CUSTOM SCROLLBAR
+   Add this at the END of FleetPage.css
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-fleet-mobile-filter__panel {
+    display: flex;
+    flex-direction: column;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .zipree-fleet-mobile-filter__body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: visible;
+
+    padding: 28px 24px 40px;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(198, 164, 106, 0.55) transparent;
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Chrome, Edge and Safari */
+  .zipree-fleet-mobile-filter__body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .zipree-fleet-mobile-filter__body::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 12px 0;
+  }
+
+  .zipree-fleet-mobile-filter__body::-webkit-scrollbar-thumb {
+    background: rgba(198, 164, 106, 0.45);
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .zipree-fleet-mobile-filter__body::-webkit-scrollbar-thumb:hover {
+    background: #C6A46A;
+    background-clip: padding-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .zipree-fleet-mobile-filter__body {
+    padding: 24px 20px 36px;
+  }
+}

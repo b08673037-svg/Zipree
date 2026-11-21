@@ -1,0 +1,181 @@
+/* =========================================
+   ZIPREE — WHY CHOOSE US
+========================================= */
+
+.zipree-why {
+  background: var(--color-charcoal);
+  padding: 120px 5%;
+  overflow: hidden;
+}
+
+.zipree-why__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.zipree-why__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.zipree-why__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.zipree-why__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.2;
+}
+
+.zipree-why__title-gold {
+  color: var(--color-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* --- Benefits List --- */
+.zipree-why__list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.zipree-why__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Alternating Layout */
+.zipree-why__item.is-odd .zipree-why__image-wrap {
+  order: 2;
+}
+.zipree-why__item.is-odd .zipree-why__content {
+  order: 1;
+}
+
+/* --- Image Side --- */
+.zipree-why__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zipree-why__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.zipree-why__item:hover .zipree-why__image {
+  transform: scale(1.05);
+}
+
+/* Giant Background Number */
+.zipree-why__number {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 140px;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* --- Content Side --- */
+.zipree-why__content {
+  padding: 20px 0;
+}
+
+.zipree-why__item-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.zipree-why__item-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-silver);
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.zipree-why__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne);
+  opacity: 0.5;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .zipree-why {
+    padding: 80px 5%;
+  }
+
+  .zipree-why__header {
+    margin-bottom: 60px;
+  }
+
+  .zipree-why__list {
+    gap: 60px;
+  }
+
+  .zipree-why__item {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Reset alternating layout on mobile so images always appear on top */
+  .zipree-why__item.is-odd .zipree-why__image-wrap {
+    order: 1;
+  }
+  .zipree-why__item.is-odd .zipree-why__content {
+    order: 2;
+  }
+
+  .zipree-why__image-wrap {
+    height: 300px;
+  }
+
+  .zipree-why__number {
+    font-size: 100px;
+    bottom: -10px;
+  }
+
+  .zipree-why__content {
+    padding: 0;
+  }
+
+  .zipree-why__item-desc {
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment (CRITICAL: Never commit your database or SMTP keys)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store

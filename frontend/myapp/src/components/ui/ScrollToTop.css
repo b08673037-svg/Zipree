@@ -1,0 +1,51 @@
+/* =========================================
+   ZIPREE — SCROLL TO TOP
+========================================= */
+
+.zipree-scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: background 250ms ease, box-shadow 250ms ease;
+}
+
+.zipree-scroll-top:hover {
+  background: var(--color-ivory);
+  box-shadow: 0 6px 28px rgba(198, 164, 106, 0.3);
+}
+
+.zipree-scroll-top:focus-visible {
+  outline: 2px solid var(--color-ivory);
+  outline-offset: 3px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .zipree-scroll-top {
+    width: 44px;
+    height: 44px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .zipree-scroll-top {
+    transition: none;
+  }
+}

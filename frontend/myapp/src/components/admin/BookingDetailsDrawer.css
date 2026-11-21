@@ -1,0 +1,328 @@
+/* =========================================
+   ZIPREE — BOOKING DETAILS DRAWER
+========================================= */
+
+.zipree-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.zipree-drawer {
+  width: 100%;
+  max-width: 520px;
+  background: var(--color-charcoal);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-poppins);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.zipree-drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.zipree-drawer__eyebrow {
+  font-size: 10px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 4px;
+}
+
+.zipree-drawer__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-ivory);
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+.zipree-drawer__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-silver);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zipree-drawer__close-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-ivory);
+}
+
+.zipree-drawer__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.zipree-drawer__error {
+  padding: 12px;
+  background: rgba(200, 104, 96, 0.1);
+  border-left: 2px solid var(--color-danger);
+  color: var(--color-danger);
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+.zipree-drawer__status-row {
+  display: flex;
+  gap: 8px;
+}
+
+.zipree-drawer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zipree-drawer__section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zipree-drawer__info-value {
+  font-size: 15px;
+  color: var(--color-ivory);
+  margin: 0;
+  font-weight: 500;
+}
+
+.zipree-drawer__info-sub {
+  font-size: 13px;
+  color: var(--color-silver);
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zipree-drawer__vehicle-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.zipree-drawer__vehicle-card img {
+  width: 80px;
+  height: 56px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.zipree-drawer__grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.zipree-drawer__label {
+  font-size: 10px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px;
+}
+
+.zipree-drawer__value {
+  font-size: 13px;
+  color: var(--color-ivory);
+  margin: 0;
+  font-weight: 500;
+}
+
+.zipree-drawer__price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-silver);
+}
+
+.zipree-drawer__price-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: var(--color-champagne);
+  font-weight: 600;
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.zipree-drawer__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zipree-drawer__timeline-item {
+  position: relative;
+  padding-left: 20px;
+}
+
+.zipree-drawer__timeline-dot {
+  position: absolute;
+  left: -17px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-charcoal-2);
+  border: 2px solid var(--color-silver);
+}
+
+.zipree-drawer__timeline-item.is-done .zipree-drawer__timeline-dot {
+  background: var(--color-champagne);
+  border-color: var(--color-champagne);
+}
+
+.zipree-drawer__timeline-item.is-cancelled .zipree-drawer__timeline-dot {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.zipree-drawer__timeline-label {
+  font-size: 13px;
+  color: var(--color-ivory);
+  margin: 0;
+  font-weight: 500;
+}
+
+.zipree-drawer__timeline-date {
+  font-size: 11px;
+  color: var(--color-silver);
+  margin: 2px 0 0;
+}
+
+.zipree-drawer__footer {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-charcoal-2);
+  flex-shrink: 0;
+}
+
+.zipree-drawer__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.zipree-drawer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.zipree-drawer__btn--primary {
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+}
+
+.zipree-drawer__btn--primary:hover {
+  background: var(--color-ivory);
+}
+
+.zipree-drawer__btn--danger {
+  background: rgba(200, 104, 96, 0.15);
+  color: var(--color-danger);
+  border: 1px solid rgba(200, 104, 96, 0.3);
+}
+
+.zipree-drawer__btn--danger:hover {
+  background: var(--color-danger);
+  color: white;
+}
+
+.zipree-drawer__btn--secondary {
+  background: transparent;
+  color: var(--color-silver);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zipree-drawer__btn--secondary:hover {
+  color: var(--color-ivory);
+  border-color: var(--color-ivory);
+}
+
+.zipree-drawer__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zipree-drawer__confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--color-ivory);
+}
+
+.zipree-drawer__confirm-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.zipree-drawer__confirm-actions .zipree-drawer__btn {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .zipree-drawer {
+    max-width: 100%;
+  }
+
+  .zipree-drawer__content {
+    padding: 16px;
+  }
+
+  .zipree-drawer__footer {
+    padding: 16px;
+  }
+
+  .zipree-drawer__grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

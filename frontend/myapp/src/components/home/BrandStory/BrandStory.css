@@ -1,0 +1,191 @@
+/* =========================================
+   ZIPREE — BRAND STORY (Editorial Split)
+========================================= */
+
+.zipree-story {
+  background: var(--color-charcoal);
+  padding: 120px 5%;
+  overflow: hidden;
+  position: relative;
+}
+
+.zipree-story__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* =========================================
+   LEFT: CINEMATIC IMAGE
+========================================= */
+
+.zipree-story__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-charcoal-2); /* Shows if image is loading */
+}
+
+.zipree-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1200ms ease;
+}
+
+.zipree-story__image-wrap:hover .zipree-story__image {
+  transform: scale(1.03);
+}
+
+.zipree-story__image-overlay {
+  position: absolute;
+  inset: 0;
+  /* Subtle gradient to blend the right edge of the image into the text */
+  background: linear-gradient(
+    to right,
+    transparent 70%,
+    var(--color-charcoal) 100%
+  );
+  opacity: 0.6; /* Reduced so it doesn't fully cover the image */
+  pointer-events: none;
+}
+
+/* =========================================
+   RIGHT: EDITORIAL TEXT
+========================================= */
+
+.zipree-story__content {
+  padding-right: 40px;
+}
+
+.zipree-story__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.zipree-story__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-ivory);
+  margin-bottom: 32px;
+}
+
+.zipree-story__title-gold {
+  color: var(--color-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.zipree-story__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne);
+  margin-bottom: 32px;
+  opacity: 0.5;
+}
+
+.zipree-story__desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-silver);
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.zipree-story__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-champagne);
+  transition: color 300ms ease;
+}
+
+.zipree-story__link span {
+  color: var(--color-champagne);
+  font-size: 16px;
+  transition: transform 300ms ease;
+}
+
+.zipree-story__link:hover {
+  color: var(--color-champagne);
+}
+
+.zipree-story__link:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-story__container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .zipree-story__image-wrap {
+    height: 500px;
+  }
+
+  .zipree-story__image-overlay {
+    background: linear-gradient(to top, var(--color-charcoal) 0%, transparent 50%);
+  }
+
+  .zipree-story__content {
+    padding-right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zipree-story__desc {
+    margin: 0 auto 40px;
+  }
+
+  .zipree-story__divider {
+    margin: 0 auto 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .zipree-story {
+    padding: 80px 5%;
+  }
+
+  .zipree-story__image-wrap {
+    height: 350px;
+  }
+
+  .zipree-story__title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .zipree-story__desc {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,516 @@
+/* =========================================
+   ZIPREE — PREMIUM ABOUT US PAGE
+========================================= */
+
+.zipree-about {
+  background: var(--color-charcoal);
+  min-height: 100vh;
+}
+
+/* --- SECTION 01: HERO --- */
+.zipree-about-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.zipree-about-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.zipree-about-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.zipree-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 19, 21, 0.3) 0%,
+    rgba(17, 19, 21, 0.8) 60%,
+    var(--color-charcoal) 100%
+  );
+}
+
+.zipree-about-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.zipree-about-hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.zipree-about-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--color-ivory);
+  margin-bottom: 24px;
+}
+
+.zipree-about-hero__title-gold {
+  color: var(--color-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.zipree-about-hero__desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-silver);
+  max-width: 600px;
+}
+
+/* --- SECTION 02: STORY --- */
+.zipree-about-story {
+  padding: 120px 5%;
+}
+
+.zipree-about-story__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.zipree-about-story__image-wrap {
+  width: 100%;
+  height: 600px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-charcoal-2);
+}
+
+.zipree-about-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zipree-about-story__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne);
+  margin-bottom: 32px;
+}
+
+.zipree-about-story__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.zipree-about-story__desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-silver);
+  margin-bottom: 24px;
+}
+
+/* --- SECTION 03: MISSION & VISION --- */
+.zipree-about-mission {
+  background: var(--color-charcoal-2);
+  padding: 100px 5%;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.zipree-about-mission__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 60px;
+}
+
+.zipree-about-mission__divider {
+  background: rgba(255, 255, 255, 0.1);
+  height: 100%;
+}
+
+.zipree-about-mission__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zipree-about-mission__label {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--color-champagne);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.zipree-about-mission__text {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-ivory);
+}
+
+/* --- SECTION 04: CORE VALUES --- */
+.zipree-about-values {
+  padding: 120px 5%;
+}
+
+.zipree-about-values__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.zipree-about-values__header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.zipree-about-values__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-ivory);
+  font-weight: 500;
+}
+
+.zipree-about-values__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.zipree-about-values__item {
+  position: relative;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-charcoal-2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 300ms ease;
+}
+
+.zipree-about-values__item:hover {
+  border-color: rgba(198, 164, 106, 0.3);
+}
+
+/* Push the 2nd and 4th items down to create an asymmetric look */
+.zipree-about-values__item.is-offset {
+  transform: translateY(40px);
+}
+
+.zipree-about-values__number {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-family: var(--font-display);
+  font-size: 100px;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.zipree-about-values__item-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-ivory);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.zipree-about-values__item-desc {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-silver);
+}
+
+/* --- SECTION 05: WHAT DEFINES --- */
+.zipree-about-define {
+  position: relative;
+  padding: 160px 5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.zipree-about-define__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1500&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+}
+
+.zipree-about-define__container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.zipree-about-define__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.zipree-about-define__gold {
+  color: var(--color-champagne);
+  font-style: italic;
+}
+
+.zipree-about-define__desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-silver);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- SECTION 06: COMMITMENT --- */
+.zipree-about-commitment {
+  padding: 120px 5%;
+}
+
+.zipree-about-commitment__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.zipree-about-commitment__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--color-ivory);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.zipree-about-commitment__desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-silver);
+}
+
+.zipree-about-commitment__image-wrap {
+  width: 100%;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-charcoal-2);
+}
+
+.zipree-about-commitment__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- SECTION 07: TEAM/ALT --- */
+.zipree-about-team {
+  background: var(--color-charcoal-2);
+  padding: 120px 5%;
+  text-align: center;
+}
+
+.zipree-about-team__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.zipree-about-team__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--color-ivory);
+  margin-bottom: 24px;
+}
+
+.zipree-about-team__desc {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-silver);
+}
+
+/* --- SECTION 08: FINAL CTA --- */
+.zipree-about-cta {
+  position: relative;
+  padding: 160px 5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.zipree-about-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.zipree-about-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zipree-about-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 19, 21, 0.75);
+}
+
+.zipree-about-cta__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.zipree-about-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-ivory);
+  margin-bottom: 24px;
+}
+
+.zipree-about-cta__desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--color-silver);
+  margin-bottom: 40px;
+}
+
+.zipree-about-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 40px;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 300ms ease;
+}
+
+.zipree-about-cta__btn:hover {
+  background: var(--color-ivory);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-about-story__container,
+  .zipree-about-commitment__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .zipree-about-story__image-wrap {
+    height: 400px;
+  }
+
+  .zipree-about-commitment__container {
+    display: flex;
+    flex-direction: column-reverse; /* Puts text above image on mobile */
+  }
+
+  .zipree-about-mission__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .zipree-about-mission__divider {
+    height: 1px;
+    width: 100%;
+  }
+
+  .zipree-about-values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zipree-about-values__item.is-offset {
+    transform: translateY(0); /* Remove offset on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .zipree-about-hero {
+    padding-bottom: 60px;
+  }
+  
+  .zipree-about-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .zipree-about-story,
+  .zipree-about-values,
+  .zipree-about-commitment {
+    padding: 80px 5%;
+  }
+
+  .zipree-about-story__image-wrap {
+    height: 300px;
+  }
+
+  .zipree-about-define {
+    padding: 100px 5%;
+  }
+  
+  .zipree-about-define__title {
+    font-size: 2.5rem;
+  }
+
+  .zipree-about-cta {
+    padding: 100px 5%;
+  }
+}

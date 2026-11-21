@@ -1,0 +1,113 @@
+/* =========================================
+   ZIPREE — OTP VERIFICATION PAGE
+========================================= */
+
+/* Reuses .zipree-auth classes for the split layout */
+
+.zipree-otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 20px;
+}
+
+.zipree-otp-input {
+  width: 100%;
+  height: 64px;
+  background: var(--color-charcoal-2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  caret-color: var(--color-champagne);
+}
+
+/* THE FIX: Clean focus state without default outline doubling */
+.zipree-otp-input:focus,
+.zipree-otp-input:focus-visible {
+  border-color: var(--color-champagne);
+  background: #1a1d1f;
+  outline: none;
+  box-shadow: 0 0 20px rgba(198, 164, 106, 0.1);
+  transform: translateY(-2px);
+}
+
+.zipree-otp-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.zipree-otp-timer {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-silver);
+  margin: 0;
+}
+
+.zipree-otp-resend {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-champagne);
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 200ms ease;
+  outline: none;
+}
+
+.zipree-otp-resend:hover:not(.is-disabled) {
+  color: var(--color-ivory);
+  text-decoration: underline;
+}
+
+.zipree-otp-resend.is-disabled {
+  color: var(--color-silver);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Success State --- */
+.zipree-otp-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.zipree-otp-success__icon {
+  width: 72px;
+  height: 72px;
+  background: rgba(198, 164, 106, 0.1);
+  border: 1px solid var(--color-champagne);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--color-champagne);
+  margin-bottom: 24px;
+}
+
+.zipree-otp-success__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-ivory);
+  margin-bottom: 12px;
+}
+
+.zipree-otp-success__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-silver);
+}

@@ -1,0 +1,26 @@
+.zipree-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.zipree-logo__img {
+  height: 64px; /* Boosted from 40px to 64px for real presence */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* A subtle drop shadow makes the chrome pop against the dark background */
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5)); 
+}
+
+/* Tablet & Mobile: scale down slightly but keep it highly visible */
+@media (max-width: 1024px) {
+  .zipree-logo__img {
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zipree-logo__img {
+    height: 40px;
+  }
+}

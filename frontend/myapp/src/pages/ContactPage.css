@@ -1,0 +1,628 @@
+
+/* =========================================
+   ZIPREE — PREMIUM CONTACT PAGE
+========================================= */
+
+.zipree-contact {
+  background: var(--color-charcoal);
+  min-height: 100vh;
+}
+
+/* --- SECTION 01: HERO --- */
+
+.zipree-contact-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.zipree-contact-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.zipree-contact-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zipree-contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 19, 21, 0.5) 0%,
+    var(--color-charcoal) 100%
+  );
+}
+
+.zipree-contact-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  margin-top: 60px;
+}
+
+.zipree-contact-hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 20px;
+}
+
+.zipree-contact-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-ivory);
+  line-height: 1.2;
+}
+
+.zipree-contact-hero__title-gold {
+  color: var(--color-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* --- SECTION 02: SHORTCUTS --- */
+
+.zipree-contact-shortcuts {
+  padding: 0 5%;
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+}
+
+.zipree-contact-shortcuts__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.zipree-contact-shortcut-btn {
+  background: var(--color-charcoal-2);
+  border: 1px solid rgba(198, 164, 106, 0.3);
+  color: var(--color-ivory);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.zipree-contact-shortcut-btn:hover {
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  transform: translateY(-3px);
+}
+
+/* --- SECTION 03: MAIN FORM --- */
+
+.zipree-contact-main {
+  padding: 100px 5%;
+}
+
+.zipree-contact-main__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+}
+
+.zipree-contact-info__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-ivory);
+  margin-bottom: 16px;
+}
+
+.zipree-contact-info__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-silver);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.zipree-contact-info__item {
+  margin-bottom: 32px;
+}
+
+.zipree-contact-info__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-champagne);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.zipree-contact-info__item p {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--color-ivory);
+}
+
+/* --- FORM --- */
+
+.zipree-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.zipree-contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.zipree-contact-form input,
+.zipree-contact-form textarea {
+  width: 100%;
+  padding: 16px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 250ms ease;
+}
+
+.zipree-contact-form input:focus,
+.zipree-contact-form textarea:focus {
+  border-color: var(--color-champagne);
+}
+
+.zipree-contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =========================================
+   CUSTOM ZIPREE CONTACT DROPDOWN
+========================================= */
+
+.zipree-contact-dropdown {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--font-body);
+  z-index: 5;
+}
+
+/* Dropdown trigger */
+
+.zipree-contact-dropdown .zipree-dropdown__trigger {
+  width: 100%;
+  min-height: 55px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  text-align: left;
+
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 250ms ease,
+    color 250ms ease;
+}
+
+.zipree-contact-dropdown .zipree-dropdown__trigger:hover,
+.zipree-contact-dropdown .zipree-dropdown__trigger:focus-visible,
+.zipree-contact-dropdown .zipree-dropdown__trigger--open {
+  border-bottom-color: var(--color-champagne);
+}
+
+.zipree-contact-dropdown .zipree-dropdown__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-ivory);
+}
+
+.zipree-contact-dropdown .zipree-dropdown__value--placeholder {
+  color: var(--color-silver);
+  opacity: 0.8;
+}
+
+/* Arrow */
+
+.zipree-contact-dropdown .zipree-dropdown__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-champagne);
+  transition: transform 250ms ease;
+}
+
+.zipree-contact-dropdown .zipree-dropdown__arrow--open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+
+.zipree-contact-dropdown .zipree-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  background: var(--color-charcoal-2);
+  border: 1px solid rgba(198, 164, 106, 0.25);
+  border-radius: 4px;
+
+  padding: 7px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  transform-origin: top center;
+}
+
+.zipree-contact-dropdown .zipree-dropdown__options {
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-champagne) var(--color-charcoal-2);
+}
+
+/* Individual options */
+
+.zipree-contact-dropdown .zipree-dropdown__option {
+  width: 100%;
+  min-height: 43px;
+  padding: 11px 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+
+  color: var(--color-silver);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+}
+
+.zipree-contact-dropdown .zipree-dropdown__option:hover,
+.zipree-contact-dropdown .zipree-dropdown__option--active {
+  background: rgba(198, 164, 106, 0.09);
+  color: var(--color-ivory);
+}
+
+.zipree-contact-dropdown .zipree-dropdown__option--selected {
+  color: var(--color-champagne);
+  font-weight: 500;
+}
+
+.zipree-contact-dropdown .zipree-dropdown__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-champagne);
+}
+
+/* Form submit button */
+
+.zipree-contact-form__btn {
+  align-self: flex-start;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  border: none;
+  padding: 16px 40px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background 250ms ease,
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.zipree-contact-form__btn:hover:not(:disabled) {
+  background: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+.zipree-contact-form__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zipree-contact-form__error {
+  color: #ff6b6b;
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+/* Success message */
+
+.zipree-contact-success {
+  text-align: center;
+  padding: 40px;
+  background: var(--color-charcoal-2);
+  border: 1px solid rgba(198, 164, 106, 0.2);
+  border-radius: 4px;
+}
+
+.zipree-contact-success__icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(198, 164, 106, 0.1);
+  border: 1px solid var(--color-champagne);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-champagne);
+  margin: 0 auto 24px;
+}
+
+.zipree-contact-success h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--color-ivory);
+  margin-bottom: 12px;
+}
+
+.zipree-contact-success p {
+  font-family: var(--font-body);
+  color: var(--color-silver);
+}
+
+/* --- SECTION 04: FAQ --- */
+
+.zipree-contact-faq {
+  padding: 100px 5%;
+  background: var(--color-charcoal-2);
+}
+
+.zipree-contact-faq__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.zipree-contact-faq__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--color-ivory);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.zipree-contact-faq__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zipree-contact-faq__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: transparent;
+  border: none;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: 18px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.zipree-contact-faq__question span {
+  color: var(--color-champagne);
+  font-size: 24px;
+}
+
+.zipree-contact-faq__answer {
+  overflow: hidden;
+}
+
+.zipree-contact-faq__answer p {
+  padding-bottom: 24px;
+  font-family: var(--font-body);
+  color: var(--color-silver);
+  line-height: 1.7;
+}
+
+/* --- SECTION 05: FINAL CTA --- */
+
+.zipree-contact-cta {
+  position: relative;
+  padding: 120px 5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.zipree-contact-cta__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.zipree-contact-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zipree-contact-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 19, 21, 0.8);
+}
+
+.zipree-contact-cta__content {
+  position: relative;
+  z-index: 2;
+}
+
+.zipree-contact-cta__content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-ivory);
+  margin-bottom: 32px;
+}
+
+.zipree-contact-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 40px;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition:
+    background 250ms ease,
+    transform 250ms ease;
+}
+
+.zipree-contact-cta__btn:hover {
+  background: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .zipree-contact-main__container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .zipree-contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .zipree-contact-shortcuts__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zipree-contact-shortcut-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .zipree-contact-hero {
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .zipree-contact-hero__content {
+    padding: 0 6%;
+  }
+
+  .zipree-contact-hero__title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .zipree-contact-main {
+    padding: 75px 6%;
+  }
+
+  .zipree-contact-info__title {
+    font-size: 25px;
+  }
+
+  .zipree-contact-form {
+    gap: 20px;
+  }
+
+  .zipree-contact-form__row {
+    gap: 20px;
+  }
+
+  .zipree-contact-form input,
+  .zipree-contact-form textarea {
+    font-size: 14px;
+  }
+
+  .zipree-contact-dropdown .zipree-dropdown__trigger {
+    font-size: 14px;
+  }
+
+  .zipree-contact-form__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .zipree-contact-faq {
+    padding: 75px 6%;
+  }
+
+  .zipree-contact-faq__title {
+    font-size: 27px;
+    margin-bottom: 40px;
+  }
+
+  .zipree-contact-faq__question {
+    font-size: 16px;
+    gap: 15px;
+  }
+
+  .zipree-contact-cta {
+    padding: 90px 6%;
+  }
+
+  .zipree-contact-cta__content h2 {
+    font-size: 2rem;
+  }
+}

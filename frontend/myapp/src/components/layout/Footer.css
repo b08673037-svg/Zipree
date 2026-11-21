@@ -1,0 +1,225 @@
+/* =========================================
+   ZIPREE — SIGNATURE LUXURY FOOTER
+========================================= */
+
+.zipree-footer {
+  background: #0b0d0e; /* Slightly darker than main charcoal for finality */
+  padding: 100px 5% 40px;
+  border-top: 1px solid rgba(198, 164, 106, 0.15);
+  overflow: hidden;
+}
+
+.zipree-footer__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Signature Text --- */
+.zipree-footer__signature-wrap {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.zipree-footer__signature {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.zipree-footer__signature-gold {
+  color: var(--color-champagne);
+  -webkit-text-stroke: 0;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* --- Grid Layout --- */
+.zipree-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- Column Styles --- */
+.zipree-footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.zipree-footer__col--brand {
+  padding-right: 40px;
+}
+
+.zipree-footer__logo {
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.zipree-footer__statement {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-champagne);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.zipree-footer__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-silver);
+  margin-bottom: 32px;
+  max-width: 300px;
+}
+
+/* --- Social Icons --- */
+.zipree-footer__socials {
+  display: flex;
+  gap: 16px;
+}
+
+.zipree-footer__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-silver);
+  font-size: 16px;
+  transition: all 250ms ease;
+}
+
+.zipree-footer__socials a:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-charcoal);
+  background: var(--color-champagne);
+  transform: translateY(-3px);
+}
+
+/* --- Links --- */
+.zipree-footer__heading {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.zipree-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.zipree-footer__links a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-silver);
+  text-decoration: none;
+  transition: color 250ms ease, transform 250ms ease;
+  display: inline-block;
+}
+
+.zipree-footer__links a:hover {
+  color: var(--color-champagne);
+  transform: translateX(4px);
+}
+
+/* --- Bottom Bar --- */
+.zipree-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+}
+
+.zipree-footer__copyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.zipree-footer__legal {
+  display: flex;
+  gap: 24px;
+}
+
+.zipree-footer__legal a {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.zipree-footer__legal a:hover {
+  color: var(--color-ivory);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+  .zipree-footer__grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+    gap: 50px;
+  }
+
+  .zipree-footer__col--brand {
+    grid-column: 1 / -1; /* Brand takes full width */
+    padding-right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zipree-footer__desc {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .zipree-footer {
+    padding: 60px 5% 30px;
+  }
+
+  .zipree-footer__signature-wrap {
+    margin-bottom: 50px;
+  }
+
+  .zipree-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  .zipree-footer__col--brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .zipree-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

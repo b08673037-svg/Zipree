@@ -1,0 +1,270 @@
+/* =========================================
+   ZIPREE — HOW IT WORKS
+========================================= */
+
+.zipree-how {
+  background: var(--color-charcoal);
+  padding: 120px 5%;
+  overflow: hidden;
+}
+
+.zipree-how__container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.zipree-how__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.zipree-how__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.zipree-how__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.zipree-how__title-gold {
+  color: var(--color-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.zipree-how__desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-silver);
+  line-height: 1.6;
+}
+
+/* --- Steps Layout --- */
+.zipree-how__steps-wrapper {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+/* Desktop Timeline */
+.zipree-how__timeline {
+  position: absolute;
+  top: 24px; /* Aligns with the center of the number badge */
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.zipree-how__timeline-progress {
+  height: 100%;
+  background: var(--color-champagne);
+  transform-origin: left;
+}
+
+.zipree-how__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Individual Step --- */
+.zipree-how__step {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Number Badge */
+.zipree-how__number-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.zipree-how__number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-charcoal);
+  border: 1px solid var(--color-champagne);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-champagne);
+  transition: all 300ms ease;
+}
+
+.zipree-how__step:hover .zipree-how__number {
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  box-shadow: 0 0 20px rgba(198, 164, 106, 0.4);
+  transform: scale(1.1);
+}
+
+/* Image */
+.zipree-how__image-wrap {
+  width: 100%;
+  height: 220px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zipree-how__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.zipree-how__step:hover .zipree-how__image {
+  transform: scale(1.05);
+}
+
+/* Text */
+.zipree-how__step-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 12px;
+}
+
+.zipree-how__step-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-silver);
+}
+
+/* --- CTA --- */
+.zipree-how__cta-wrapper {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zipree-how__cta-text {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--color-ivory);
+  margin-bottom: 24px;
+}
+
+.zipree-how__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 40px;
+  background: var(--color-champagne);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 250ms ease, box-shadow 250ms ease;
+}
+
+.zipree-how__cta-btn:hover {
+  background: var(--color-ivory);
+  box-shadow: 0 0 30px rgba(198, 164, 106, 0.3);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablet: 2 columns, hide the horizontal line */
+@media (max-width: 1024px) {
+  .zipree-how__timeline {
+    display: none;
+  }
+
+  .zipree-how__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .zipree-how__number-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile: Vertical Timeline */
+@media (max-width: 768px) {
+  .zipree-how {
+    padding: 80px 5%;
+  }
+
+  .zipree-how__header {
+    margin-bottom: 60px;
+  }
+
+  .zipree-how__steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .zipree-how__step {
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  /* The Vertical Line */
+  .zipree-how__step::before {
+    content: "";
+    position: absolute;
+    top: 48px;
+    bottom: 0;
+    left: 24px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .zipree-how__step:last-child::before {
+    display: none;
+  }
+
+  .zipree-how__number-wrapper {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .zipree-how__step-content {
+    flex: 1;
+  }
+
+  .zipree-how__image-wrap {
+    height: 180px;
+    margin-top: 8px;
+  }
+
+  .zipree-how__cta-wrapper {
+    padding-top: 30px;
+  }
+}
