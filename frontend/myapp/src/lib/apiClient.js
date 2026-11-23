@@ -27,7 +27,7 @@ export function setToken(token) {
     if (token) localStorage.setItem(TOKEN_KEY, token);
     else localStorage.removeItem(TOKEN_KEY);
   } catch {
-    // ignore storage failures (private mode, etc.)
+    // ignore storage failures
   }
 }
 
@@ -84,6 +84,7 @@ async function request(path, { method = "GET", body, headers = {}, signal } = {}
   return data;
 }
 
+// Named export — this is what AuthContext.jsx is looking for
 export const api = {
   get: (path, opts) => request(path, { ...opts, method: "GET" }),
   post: (path, body, opts) => request(path, { ...opts, method: "POST", body }),
