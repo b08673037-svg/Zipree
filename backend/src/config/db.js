@@ -1,54 +1,41 @@
-// Mongoose connection module.
-// - connectDB(): opens the connection, registers event listeners, fails loudly on error.
-// - closeDB(): cleanly closes the connection (used on SIGINT/SIGTERM).
-//
-// No models are defined here — this file is purely connection lifecycle.
-
 import mongoose from "mongoose";
 import config from "./index.js";
 
-// Reasonable defaults for Atlas. If the cluster is unreachable or the
-// password is wrong, we fail within ~10s instead of hanging forever.
 const CONNECTION_OPTIONS = {
   serverSelectionTimeoutMS: 10000,
   socketTimeoutMS: 45000,
+  maxPoolSize: 10, // Vercel ke liye chhota pool rakhna zaroori hai
 };
 
+// Connection ko cache karne ke liye variable
+let cachedConnection = null;
+
 export async function connectDB() {
+  // Agar pehle se connection hai aur ready state 1 (connected) hai, toh wahi use karo
+  if (cachedConnection && mongoose.connection.readyState === 1) {
+    return cachedConnection;
+  }
+
   console.log("[db] Connecting to MongoDB...");
 
-  // Register listeners once. Attach them before connect so we don't miss
-  // the first "connected" event.
-  mongoose.connection.on("connected", () => {
+  try {
+    cachedConnection = await mongoose.connect(config.mongoUri, CONNECTION_OPTIONS);
+    
+    // Yeh logs sirf pehli baar connect hone par aayenge
     const { host, name } = mongoose.connection;
     console.log(`[db] MongoDB connected: ${host} / ${name}`);
-  });
-
-  mongoose.connection.on("error", (err) => {
-    console.error("[db] MongoDB connection error:", err.message);
-  });
-
-  mongoose.connection.on("disconnected", () => {
-    console.warn("[db] MongoDB disconnected.");
-  });
-
-  mongoose.connection.on("reconnected", () => {
-    console.log("[db] MongoDB reconnected.");
-  });
-
-  try {
-    await mongoose.connect(config.mongoUri, CONNECTION_OPTIONS);
+    
+    return cachedConnection;
   } catch (err) {
     console.error("[db] Initial MongoDB connection failed:", err.message);
-    throw err; // server.js will catch this and exit(1)
+    throw err; 
   }
 }
 
 export async function closeDB() {
-  try {
+  // Vercel par iski zaroorat nahi hoti, par local ke liye theek hai
+  if (mongoose.connection.readyState === 1) {
     await mongoose.connection.close();
     console.log("[db] MongoDB connection closed.");
-  } catch (err) {
-    console.error("[db] Error while closing MongoDB connection:", err.message);
   }
 }

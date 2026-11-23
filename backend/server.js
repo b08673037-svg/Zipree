@@ -1,3 +1,6 @@
+import dns from "node:dns";
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 // backend/server.js
 import app from "./src/app.js";
 import config from "./src/config/index.js";
