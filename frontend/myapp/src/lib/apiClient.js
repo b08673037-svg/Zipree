@@ -2,7 +2,8 @@
 // Lightweight fetch wrapper. Reads VITE_API_URL, attaches JWT if present,
 // normalizes error responses into thrown ApiError instances.
 
-const BASE_URL = import.meta.env.VITE_API_URL || "/api";
+// Fallback to localhost if VITE_API_URL is missing (for local dev)
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 const TOKEN_KEY = "zipree_token";
 
 export class ApiError extends Error {
@@ -62,6 +63,7 @@ async function request(path, { method = "GET", body, headers = {}, signal } = {}
     });
   } catch (err) {
     if (err.name === "AbortError") throw err;
+    // Yeh error tab aata hai jab backend ka URL galat ho ya server down ho
     throw new ApiError("Network error. Please try again.", 0);
   }
 
@@ -84,7 +86,6 @@ async function request(path, { method = "GET", body, headers = {}, signal } = {}
   return data;
 }
 
-// Named export — this is what AuthContext.jsx is looking for
 export const api = {
   get: (path, opts) => request(path, { ...opts, method: "GET" }),
   post: (path, body, opts) => request(path, { ...opts, method: "POST", body }),
